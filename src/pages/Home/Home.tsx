@@ -1,7 +1,7 @@
 import { useEffect, useState, Fragment, ChangeEvent } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Input, InputAdornment, ListSubheader, Typography } from '@material-ui/core';
+import { Input, InputAdornment, Typography } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 
 import Api from '../../api/Api';
@@ -71,9 +71,9 @@ export default function Home() {
       </InputBox>
       {!isLoading && (
         <List>
-          <ListSubheader sx={{ backgroundColor: 'transparent' }} component='div'>
+          <Typography sx={{ backgroundColor: 'transparent' }} component='div'>
             {filteredUsers.length} Contatos
-          </ListSubheader>
+          </Typography>
           {filteredUsers.length === 0 ? (
             <ListEmpty message='Ops! Contato pesquisado não foi encontrado' />
           ) : (

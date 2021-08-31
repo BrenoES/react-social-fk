@@ -1,3 +1,4 @@
+import { Box, LinearProgress } from '@material-ui/core';
 import React, { Suspense } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
@@ -8,7 +9,13 @@ function TodosRoutes() {
 
   return (
     <Switch>
-      <Suspense fallback={<span>Loading...</span>}>
+      <Suspense
+        fallback={
+          <Box width='100%'>
+            <LinearProgress />
+          </Box>
+        }
+      >
         <Route exact path={path} component={TodosComponent} />
       </Suspense>
     </Switch>
